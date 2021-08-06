@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check List</title>
+    <link rel="stylesheet" type="text/css" href="check-list.css" />
+    <link rel="stylesheet" type="text/css" href="neon-buttom.css" />
+    <link rel="stylesheet" type="text/css" href="scrollbar.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: consolas;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #001925;
+            font-size: 24px;
+        }
+
+        #addItem {
+            width: 60vw;
+            height: 50px;
+            margin-bottom: 15px;
+            padding-left: 15px;
+            font-size:24px
+        }
+    </style>
+</head>
+<body>
+    <div class="list" id="list">
+        <h2>Check-List</h2>
+    </div>
+
+    <input type="text" name="addItem" id="addItem" placeholder="Digite aqui novos itens para adicionar a lista...">
+    <a href="javascript:void(0)" onclick="adicionaItem();">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Adicionar
+    </a>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        function adicionaItem(){
+            var input = $("#addItem").val();
+            $(".list").append("<label><input type='checkbox' name=''><i></i><span>"+input+"</span></label>"); 
+        }
+    </script>
+</body>
+
+</html>
